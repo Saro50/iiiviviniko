@@ -1,0 +1,526 @@
+/*---------------------------------------------------
+		LESS Elements 0.5
+	---------------------------------------------------
+		A set of useful LESS mixins by Dmitry Fadeyev
+		Special thanks for mixin suggestions to:
+			Kris Van Herzeele,
+			Benoit Adam,
+			Portenart Emile-Victor
+			
+		More info at: http://lesselements.com
+-----------------------------------------------------*/
+/**
+ *  @CSS shape
+ */
+* {
+  padding: 0px;
+  margin: 0px;
+  list-style: none;
+  font-size: 12px;
+  font-family: "Droid Sans", DroidSansWeb, "Segoe UI", "Lucida Sans Unicode", Arial, Helvetica, sans-serif;
+}
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: url('fonts/glyphicons-halflings-regular.eot');
+  src: url('fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('fonts/glyphicons-halflings-regular.aoff') format('woff'), url('fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('fonts/glyphicons-halflings-regular.svg#glyphicons-halflingsregular') format('svg');
+}
+body,
+html {
+  height: 100%;
+  width: 100%;
+}
+body {
+  background: url("img/fondo.gif") fixed;
+}
+a {
+  text-decoration: none;
+  color: #069;
+  cursor: pointer;
+}
+a:hover {
+  color: #0DAAF8;
+}
+.a-login-tip {
+  text-align: right;
+  height: 18px;
+  background-color: #f1f1f1;
+  color: #666;
+  padding: 2px 20px;
+}
+.a-login-tip .out {
+  color: #ccc;
+}
+.a-login-tip .out:hover {
+  color: #069;
+}
+.a-wrapper {
+  position: relative;
+  z-index: 1;
+  width: 940px;
+  padding: 10px 20px;
+  margin: 1em;
+  background-color: rgba(255, 217, 19, 0.11);
+  box-shadow: 1px 1px 7px 1px #ccc;
+}
+.a-word-orange {
+  color: #d86654;
+}
+.a-head {
+    background: radial-gradient(circle farthest-side at top,rgba(255,255,255,0.45) 0,rgba(255,255,255,0) 100%);
+    background-color: #fcfcfc;
+  position: relative;
+  z-index: 13;
+  top: 0px;
+  left: 0px;
+}
+.a-head h1 {
+  margin-left: 50px;
+  padding: 10px 20px;
+  font-size: 26px;
+  text-shadow: 0 1px 2px rgba(255,255,255,0.7);
+  letter-spacing: 0.02em;
+  font-family: 'League Gothic', Impact, Arial, Helvetica, sans-serif;
+  color: #333;
+  font-weight: 400;
+}
+.a-head .a-h-btn {
+  cursor: pointer;
+  background: url("img/wheel.png") no-repeat center center #161616;
+  width: 53px;
+  height: 53px;
+  float: left;
+  position: relative;
+}
+.a-head .a-h-btn:hover ul {
+  display: block;
+}
+.a-head .a-h-btn ul {
+  position: absolute;
+  display: none;
+  width: 250px;
+  top: 53px;
+  border: 1px solid #d7d7d7;
+  border-top: none;
+  box-shadow: 1px 1px 4px #ccc;
+}
+.a-head .a-h-btn ul li {
+  border-top: 1px solid #d7d7d7;
+  font-size: 14px;
+  background-color: #FCFCFC;
+}
+.a-head .a-h-btn ul li a {
+  padding: 10px 20px;
+  display: block;
+}
+.a-head .a-h-btn ul li .cur {
+  opacity: 1;
+}
+.a-head .a-h-btn ul li:hover {
+  background-color: #fff;
+}
+.a-head .a-nav-w {
+  position: absolute;
+  right: 0px ;
+  top: 0px;
+}
+.a-head .a-nav-w ul li {
+  float: left;
+}
+.a-head .a-nav-w ul li a {
+  -webkit-transition: all opacity 0.5s ease-out;
+  -moz-transition: all opacity 0.5s ease-out;
+  transition: all opacity 0.5s ease-out;
+  -webkit-transition: opacity 0.5s;
+  -moz-transition: opacity 0.5s;
+  -o-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+  display: block;
+  height: 53px;
+  line-height: 53px;
+  padding: 0px 30px;
+  opacity: 0.8;
+}
+.a-head .a-nav-w ul li a span {
+  text-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+}
+.a-head .a-nav-w ul li a:hover {
+  opacity: 1;
+}
+.a-head .a-nav-w .nav1 {
+  background-color: #5aa6ff;
+  color: #fff;
+}
+.a-head .a-nav-w .nav2 {
+  background-color: #47bfa2;
+  color: #fff;
+}
+.a-head .a-nav-w .nav3 {
+  background-color: #d86654;
+  color: #fff;
+}
+
+.a-help{
+  position: absolute;
+  right: 10px;
+  top:10px;
+  z-index: 2;
+}
+
+.a-help .help{
+  display: block;
+  background-color: #ccc;
+  color: #f1f1f1;
+  border-radius: 5px;
+  font-weight: 800;
+  padding: 5px;
+  font-size: 12px;
+  width: 12px;
+  text-align: center;
+  line-height: 12px;
+  font-family: Verdana, Geneva, sans-serif /*fit for screen read*/;
+  transition: background-color 0.5s;
+  -webkit-transition: background-color 0.5s; /* Safari */
+  -ms-transition: background-color 0.5s; /* IE */
+  -moz-transition: background-color 0.5s; /* FF */
+}
+.a-help .open{
+  background-color: #cb0000;
+}
+.a-help-info{
+  box-shadow: 1px 1px 4px #000;
+  position: absolute;
+  right: 10px;
+  top:10px;
+  background-color: #EFFFFD;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 1em;
+  line-height: 1.5em;
+  z-index: 1;
+}
+.a-help-info h2{
+  color: #069;
+  font-size: 18px;
+  margin: 10px 0px;
+}
+
+.a-help-info img{
+  border: 2px solid #d7d7d7;
+  margin: 10px 0px;
+  border-radius: 10px;
+}
+
+.a-side-l {
+  padding: 20px;
+  width: 200px;
+  height: 100%;
+  display: block;
+  background-color: #5aa6ff;
+}
+.a-split {
+  color: #d7d7d7;
+  margin: 0px 5px;
+}
+.a-title-1 {
+  font-size: 24px;
+  margin: 10px 0px;
+  border-bottom: 2px solid #ccc;
+  padding: 10px;
+}
+.a-title-2 {
+  font-size: 18px;
+  color: #999;
+  font-weight: 400;
+  margin: 1em;
+}
+.a-title-en {
+  font-family: 'Trebuchet MS', Helvetica, sans-serif /* fit for title*/;
+  border-left: 2px solid #ccc;
+  padding-left: 10px;
+  font-size: 18px;
+  margin: 1em;
+  font-weight: 400;
+  color: #666;
+}
+.a-tips {
+  color: #999;
+  -webkit-transition: all color 0.5s ease-out;
+  -moz-transition: all color 0.5s ease-out;
+  transition: all color 0.5s ease-out;
+  -webkit-transition: color 0.5s;
+  -moz-transition: color 0.5s;
+  -o-transition: color 0.5s;
+  transition: color 0.5s;
+}
+.a-tips .k-icon {
+  margin: 0px 5px;
+}
+.a-tips span {
+  -webkit-transition: all color 0.5s ease-out;
+  -moz-transition: all color 0.5s ease-out;
+  transition: all color 0.5s ease-out;
+  -webkit-transition: color 0.5s;
+  -moz-transition: color 0.5s;
+  -o-transition: color 0.5s;
+  transition: color 0.5s;
+}
+.a-tips:hover {
+  color: #333;
+}
+.a-tips:hover span {
+  color: #cb0000;
+}
+.a-list-in,
+.a-list-form {
+  border: 1px solid #d7d7d7;
+  padding: 1.5em;
+  border-radius: 5px;
+  box-shadow: 1px 1px 7px  #f1f1f1 inset;
+}
+.a-list-in li,
+.a-list-form li {
+  margin: 15px 0px;
+}
+.a-list-in li label,
+.a-list-form li label {
+  display: inline-block;
+  width: 80px;
+  text-align: right;
+  margin-right: 5px;
+}
+.a-list-in li label {
+  width: auto;
+}
+.a-list-topic li {
+  background-color: #f1f1f1;
+  margin: 2px 0px;
+  height: 40px;
+  line-height: 40px;
+  padding: 10px 20px;
+  position: relative;
+}
+.a-list-topic li a {
+  margin: 0px 5px;
+}
+.a-l-tab {
+  height: 30px;
+}
+.a-l-tab li {
+  float: left;
+  height: 30px;
+  line-height: 30px;
+  padding: 0px 1em;
+  border-bottom: 1px solid #ccc;
+  color: #333;
+  cursor: pointer;
+}
+.a-l-tab li a {
+  color: #ccc;
+}
+.a-l-tab li:hover {
+  color: #069;
+  border-bottom: 1px solid #069;
+}
+.a-l-tab li:hover a {
+  color: #069;
+}
+.a-l-tab .selected {
+  border-bottom: 1px solid #069;
+}
+.a-l-tab .selected a {
+  color: #069;
+}
+.a-content {
+  padding: 10px;
+  width: 920px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  min-height: 100px;
+  max-height: 500px;
+  overflow-y: scroll;
+}
+.a-tips-panel {
+  text-align: right;
+  margin: 1em 0px;
+  position: relative;
+}
+.a-tips-panel .tips-panel {
+  text-align: left;
+  display: none;
+  position: absolute;
+  right: 0px;
+  width: 200px;
+  background-color: #fff;
+  z-index: 2;
+  bottom: 0px;
+}
+.a-tips-panel:hover .tips-panel {
+  display: block;
+}
+.a-pager {
+  text-align: right;
+  margin-top: 15px;
+}
+.a-pager span {
+  -webkit-transition: all background 0.5s ease-out;
+  -moz-transition: all background 0.5s ease-out;
+  transition: all background 0.5s ease-out;
+  -webkit-transition: background 0.5s;
+  -moz-transition: background 0.5s;
+  -o-transition: background 0.5s;
+  transition: background 0.5s;
+  border: 1px solid #f1f1f1;
+  border-radius: 5px;
+  display: inline-block;
+  margin: 0px 5px;
+  padding: 2px 8px;
+}
+.a-title-tiny {
+  color: #6F5B3E;
+  font-size: 14px;
+  padding: .6em 1em;
+  font-weight: 400;
+  font-family: Impact, Charcoal, sans-serif /*fit for the title*/;
+}
+.a-w-bottom {
+  text-align: right;
+  padding: 10px;
+  margin-top: 20px;
+  border-top: 1px dotted #d7d7d7;
+}
+.a-w-flash {
+  background-color: #FAFFD8;
+  border-radius: 5px;
+  box-shadow: 1px 1px 4px #f1f1f1;
+  border: 1px solid #d7d7d7;
+  padding: 1em;
+}
+.a-w-flash .impt{
+  color: #f00;
+  font-size: 14px;
+}
+.footer {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  background-color: #f1f1f1;
+  color: #fff;
+  padding: .5em 1em;
+  -webkit-transition: all background 0.5s ease-out;
+  -moz-transition: all background 0.5s ease-out;
+  transition: all background 0.5s ease-out;
+  -webkit-transition: background 0.5s;
+  -moz-transition: background 0.5s;
+  -o-transition: background 0.5s;
+  transition: background 0.5s;
+}
+.footer:hover {
+  background-color: #c5c5c5;
+}
+.ed-content ul {
+  margin: 1em;
+}
+.a-panel {
+  padding: 1em;
+  background: #f1f1f1;
+  border: 1px solid #d7d7d7;
+  border-radius: 5px;
+  margin: 1em 0px;
+}
+.a-section {
+  margin: 1em 0px;
+}
+.a-section h3 {
+  font-size: 18px;
+  margin: 1em;
+  font-family: 'Trebuchet MS', Helvetica, sans-serif /* fit for title*/;
+}
+
+
+.a-pre-wrapper{
+  height:100%; width:100%;position:absolute;left:0px;top:-100%;background:#f1f1f1;z-index:999;
+  transition:top 0.5s;
+  transition-timing-function: ease-in-out;
+}
+
+.down{
+  top:0%;
+}
+
+.a-pre-wrapper > .close{
+  padding: 15px;
+  background-color: #FDFDFD;
+  box-shadow: 1px 1px 3px #000;
+}
+
+.a-pre-wrapper > .content{
+  margin: 20px;
+  background-color: #fff;
+  padding: 20px;
+
+}
+
+.a-pre-wrapper > .content > ul >li{
+  float: left;
+  width: 25%;
+  height: 200px;
+  box-sizing:border-box;
+  padding: 5px;
+  overflow: hidden;
+}
+
+.a-pre-wrapper > .content > ul >li >img{
+  max-width: 100%;
+  max-height: 200px;
+  cursor: all-scroll;
+  box-sizing:border-box;
+  padding: 10px;
+  opacity: 0.6;
+  transition:background 0.5s;
+}
+
+.a-pre-wrapper > .content > ul >li >img:hover{
+  opacity: 1;
+}
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: " ";
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.a-img-list li{
+  padding: 10px 0px;
+  border-bottom: 1px dotted #069;
+}
+/**
+ *  drag style
+ */
+
+.d-over{
+  opacity: 0.5;
+  background-color:red;
+}
+
+.form-ul{
+  padding: 15px;
+
+}
+.form-ul li{
+  margin: 10px 0px;
+}
+.form-ul li label{
+  margin-right: 10px;
+}
+
+.missing{
+  font-size: 56px;
+  width: 300px;
+  margin: 200px auto;
+  font-family: "微软雅黑";
+  color: #069;
+  text-shadow:1px 1px 1px #333;
+}

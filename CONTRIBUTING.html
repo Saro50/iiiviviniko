@@ -1,0 +1,190 @@
+<html><meta charset="UTF-8"><style>html { 
+    font-size: 100%; 
+    overflow-y: scroll; 
+    -webkit-text-size-adjust: 100%; 
+    -ms-text-size-adjust: 100%; 
+}
+
+body{
+    font-family: helvetica, arial, freesans, clean, sans-serif;
+    color: #333;
+    background-color: #fff;
+    border-color: #999999;
+    border-width: 2px;
+    line-height: 1.5;
+    margin: 2em 3em;
+    text-align:left;
+    padding: 0 100px 0 100px;
+}
+
+p{
+    color: #333;
+    padding: 0.5em 1em;
+}
+p:hover{
+    color: #000;
+}
+
+p{
+            -webkit-transition-duration:0.5s;
+            -webkit-transition-timing-function:linear;
+            -webkit-transition-property:background-color,color,transform,box-shadow,border;
+
+            -moz-transition-duration:0.5s;
+            -moz-transition-timing-function:linear;
+            -moz-transition-property:background-color,color,transform,box-shadow,border;
+
+            -ms-transition-duration:0.5s;
+            -ms-transition-timing-function:linear;
+            -ms-transition-property:background-color,color,transform,box-shadow,border;
+}
+em{
+    color: #7AA4B9;
+}
+blockquote{
+    margin-left: 0px;
+    padding-left: 20px;
+
+    border-left: 5px solid #f1f1f1;
+}
+
+pre{
+    background-color:#f1f1f1;
+    padding: 10px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border:1px solid #e8e8e8;
+    border-width: 1px 1px 1px 6px;
+    border-radius: 5px;
+    overflow: auto;
+}
+code{
+    background-color:#ddd;
+    padding: 2px 3px;
+    color: #333;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px; 
+}
+pre code {
+    padding: 1px 3px;
+    background-color: none;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+li p{
+    margin: 0.3em;
+}
+ul > li{
+    list-style-type: disc;
+}
+a:link, a:visited{
+    color: #EE3333;
+    text-decoration: none;
+}
+a:hover{
+    color: #ff0000;
+    text-shadow:1px 1px 2px #ccf;
+    text-decoration:underline;
+}
+strong{
+    background: #EE3333;
+    color: #fff;
+    padding:.1em .3em;
+    border-radius: 5px;
+}
+
+h1{
+    color: #333;
+    font-weight: 400;
+    font-size: 36px;
+}
+h2{
+    border-bottom: 1px dotted #aaa;
+    margin-bottom: 1em;
+    color: #666;
+    font-size: 30px;
+}
+h3{
+    color: #666;
+    font-size: 18px;
+}
+h4 {
+    font-size: 21px;
+}
+h5 {
+    font-size: 18px;
+}
+.shadow{
+    -webkit-box-shadow:0 5px 15px #000;
+    -moz-box-shadow:0 5px 15px #000;
+    box-shadow:0 5px 15px #000;     
+}
+</style><body><h1>How to contribute</h1>
+<p>CakePHP loves to welcome your contributions. There are several ways to help out:
+<em> Create an <a href="https://github.com/cakephp/cakephp/issues">issue</a> on GitHub, if you have found a bug
+</em> Write testcases for open bug issues
+<em> Write patches for open bug/feature issues, preferably with testcases included
+</em> Contribute to the <a href="https://github.com/cakephp/docs">documentation</a></p>
+<p>There are a few guidelines that we need contributors to follow so that we have a
+chance of keeping on top of things.</p>
+<h2>Getting Started</h2>
+<ul>
+<li>Make sure you have a <a href="https://github.com/signup/free">GitHub account</a>.</li>
+<li>Submit an <a href="https://github.com/cakephp/cakephp/issues">issue</a>, assuming one does not already exist.</li>
+<li>Clearly describe the issue including steps to reproduce when it is a bug.</li>
+<li>Make sure you fill in the earliest version that you know has the issue.</li>
+<li>Fork the repository on GitHub.</li>
+</ul>
+<h2>Making Changes</h2>
+<ul>
+<li>Create a topic branch from where you want to base your work.</li>
+<li>This is usually the master branch.</li>
+<li>Only target release branches if you are certain your fix must be on that
+    branch.</li>
+<li>To quickly create a topic branch based on master; <code>git branch
+    master/my_contribution master</code> then checkout the new branch with <code>git
+    checkout master/my_contribution</code>. Better avoid working directly on the
+    <code>master</code> branch, to avoid conflicts if you pull in updates from origin.</li>
+<li>Make commits of logical units.</li>
+<li>Check for unnecessary whitespace with <code>git diff --check</code> before committing.</li>
+<li>Use descriptive commit messages and reference the #issue number.</li>
+<li>Core testcases should continue to pass. You can run tests locally or enable
+  <a href="https://travis-ci.org/">travis-ci</a> for your fork, so all tests and codesniffs
+  will be executed.</li>
+<li>Your work should apply the CakePHP coding standards.</li>
+</ul>
+<h2>Which branch to base the work</h2>
+<ul>
+<li>Bugfix branches will be based on master.</li>
+<li>New features that are backwards compatible will be based on next minor release
+  branch.</li>
+<li>New features or other non-BC changes will go in the next major release branch.</li>
+</ul>
+<h2>Submitting Changes</h2>
+<ul>
+<li>Push your changes to a topic branch in your fork of the repository.</li>
+<li>Submit a pull request to the repository in the cakephp organization, with the
+  correct target branch.</li>
+</ul>
+<h2>Testcases and codesniffer</h2>
+<p>CakePHP tests requires <a href="http://www.phpunit.de/manual/current/en/installation.html">PHPUnit</a>
+3.5 or higher. To run the testcases locally use the following command:</p>
+<pre><code>./lib/Cake/Console/cake test core AllTests --stderr
+</code></pre>
+<p>To run the sniffs for CakePHP coding standards:</p>
+<pre><code>phpcs -p --extensions=php --standard=CakePHP ./lib/Cake
+</code></pre>
+<p>Check the <a href="https://github.com/cakephp/cakephp-codesniffer">cakephp-codesniffer</a>
+repository to setup the CakePHP standard. The README contains installation info
+for the sniff and phpcs.</p>
+<h1>Additional Resources</h1>
+<ul>
+<li><a href="http://book.cakephp.org/2.0/en/contributing/cakephp-coding-conventions.html">CakePHP coding standards</a></li>
+<li><a href="https://github.com/cakephp/cakephp/issues">Existing issues</a></li>
+<li><a href="https://help.github.com/">General GitHub documentation</a></li>
+<li><a href="https://help.github.com/send-pull-requests/">GitHub pull request documentation</a></li>
+<li>
+<h1>cakephp IRC channel on freenode.org</h1>
+</li>
+</ul></body></html>

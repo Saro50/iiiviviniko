@@ -1,0 +1,6 @@
+#keep every one else out of private data
+#防止机器人爬行后台
+
+User-Agent: *
+
+Disallow: /admin
